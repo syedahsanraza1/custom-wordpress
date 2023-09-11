@@ -1,3 +1,5 @@
+</php
+
 /*
  * Plugin Name:       My first Plugin
  * Plugin URI:        https://syedahsanraza.com
@@ -7,3 +9,9 @@
  * Author URI:        https://syedahsanraza.com
  * Text Domain:       my-first-plugin
  */
+
+
+ if ( is_admin() ) {
+    // we are in admin mode
+    require_once __DIR__ . '/admin/plugin-name-admin.php';
+}
