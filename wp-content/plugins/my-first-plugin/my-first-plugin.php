@@ -82,3 +82,14 @@ function ahsan_feature2_page() {
 
 // Hook to add the dashboard menu and sub-menu pages
 add_action('admin_menu', 'ahsan_dashboard_menu');
+
+
+// Function to add a settings link on the Plugins page
+function ahsan_plugin_settings_link($links) {
+    $settings_link = '<a href="' . admin_url('admin.php?page=ahsan-feature2') . '">Settings</a>';
+    array_push($links, $settings_link);
+    return $links;
+}
+
+// Hook to add the settings link on the Plugins page
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'ahsan_plugin_settings_link');
